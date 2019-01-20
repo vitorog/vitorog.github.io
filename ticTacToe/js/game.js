@@ -20,9 +20,9 @@ var CURRENT_GAME_STATE;
 
 function SetupGame() {
 	CANVAS = document.getElementById("game_canvas");
-	// size = Math.max(window.innerWidth,window.innerHeight)
-	CANVAS.width = window.innerWidth / 2;
-	CANVAS.height = window.innerWidth / 2;
+	size = Math.min(window.innerWidth,window.innerHeight);
+	CANVAS.width = size * 0.85;
+	CANVAS.height = size * 0.85;
 	CONTEXT = CANVAS.getContext("2d");
 	CANVAS_WIDTH = CANVAS.width;
 	CANVAS_HEIGHT = CANVAS.height;
@@ -44,7 +44,7 @@ function SetupGame() {
 
 function ClearScreen() {
 	CONTEXT.clearRect(0, 0, CANVAS.width, CANVAS.height);
-	CONTEXT.fillStyle = "#010101";
+	CONTEXT.fillStyle = "#363636";
 	CONTEXT.fillRect(0, 0, CANVAS.width, CANVAS.height);
 }
 
